@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour {
     public Rigidbody rigid;
     [SerializeField]
     private WeaponType _type;
+    private EnemyWeaponType _type2;
 
     // This public property masks the field _type and takes action when it is set
     public WeaponType type
@@ -24,6 +25,8 @@ public class Projectile : MonoBehaviour {
             SetType(value);
         }
     }
+
+
     private void Awake()
     {
         bndCheck = GetComponent<BoundsCheck>();

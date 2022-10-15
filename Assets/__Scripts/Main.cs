@@ -7,12 +7,14 @@ public class Main : MonoBehaviour {
 
     static public Main S; // A singleton for Main
     static Dictionary<WeaponType, WeaponDefinition> WEAP_DICT;
+    static Dictionary<EnemyWeaponType, EnemyWeaponDefinition> EMYWEAP_DICT;
 
     [Header("Set in Inspector")]
     public GameObject[] prefabEnemies; // Array of Enemy prefabs
     public float enemySpawnPerSecond = 0.5f; // # Enemies/second
     public float enemyDefaultPadding = 1.5f; // Padding for position
     public WeaponDefinition[] weaponDefinitions;
+    public EnemyWeaponDefinition[] enemyweaponDefinitions;
     public GameObject prefabPowerUp;
     public WeaponType[] powerUpFrequency = new WeaponType[]
     {
@@ -55,6 +57,12 @@ public class Main : MonoBehaviour {
         foreach(WeaponDefinition def in weaponDefinitions)
         {
             WEAP_DICT[def.type] = def;
+        }
+
+        EMYWEAP_DICT = new Dictionary<EnemyWeaponType, EnemyWeaponDefinition>();
+        foreach (EnemyWeaponDefinition def in enemyweaponDefinitions)
+        {
+            EMYWEAP_DICT[def.type] = def;
         }
     }
 
@@ -114,5 +122,19 @@ public class Main : MonoBehaviour {
         // This returns a new WeaponDefinition with a type of WeaponType.none,
         // which means it has failed to find the right WeaponDefinition
         return new WeaponDefinition();
+    }
+
+    static public EnemyWeaponDefinition GetEnemyWeaponDefinition(EnemyWeaponType wt)
+    {
+        // Check to make sure that the key exists in the Dictionary
+        // Attempting to retrieve a key that didn't exist would throw an error,
+        // so the following if statement is important.
+        if (EMYWEAP_DICT.ContainsKey(wt))
+        {
+            return (EMYWEAP_DICT[wt]);
+        }
+        // This returns a new WeaponDefinition with a type of WeaponType.none,
+        // which means it has failed to find the right WeaponDefinition
+        return new EnemyWeaponDefinition();
     }
 }
