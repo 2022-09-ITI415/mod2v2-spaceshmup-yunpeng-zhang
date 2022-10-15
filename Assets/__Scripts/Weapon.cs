@@ -18,6 +18,11 @@ public enum WeaponType
     shield // Raise shieldLevel
 }
 
+public enum WeaponProperty
+{
+
+}
+
 /// <summary>
 /// The WeaponDefinition class allows you to set the properties
 /// of a specific weapon in the Inspector. The Main class has
@@ -128,9 +133,19 @@ public class Weapon : MonoBehaviour {
                 p = MakeProjectile(); // Make right Projectile
                 p.transform.rotation = Quaternion.AngleAxis(10, Vector3.back);
                 p.rigid.velocity = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make right 2 Projectile
+                p.transform.rotation = Quaternion.AngleAxis(20, Vector3.back);
+                p.rigid.velocity = p.transform.rotation * vel;
                 p = MakeProjectile(); // Make left Projectile
                 p.transform.rotation = Quaternion.AngleAxis(-10, Vector3.back);
                 p.rigid.velocity = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make left 2 Projectile
+                p.transform.rotation = Quaternion.AngleAxis(-20, Vector3.back);
+                p.rigid.velocity = p.transform.rotation * vel;
+                break;
+            case WeaponType.phaser: //新武器 Phaser：攻击时
+                p = MakeProjectile();
+                p.rigid.velocity = vel;
                 break;
         }
     }
