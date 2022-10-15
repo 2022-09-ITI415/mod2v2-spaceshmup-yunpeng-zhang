@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour {
     public bool showingDamage = false;
     public float damageDoneTime; // Time to stop showing damage
     public bool notifiedOfDestruction = false; // Will be used later
+    public delegate void EnemyWeaponFireDelegate();
+    public EnemyWeaponFireDelegate EnemyfireDelegate;
 
     protected BoundsCheck bndCheck;
 
@@ -50,8 +52,9 @@ public class Enemy : MonoBehaviour {
     void Update()
     {
         Move();
+        EnemyfireDelegate();
 
-        if(showingDamage && Time.time > damageDoneTime)
+        if (showingDamage && Time.time > damageDoneTime)
         {
             UnShowDamage();
         }
