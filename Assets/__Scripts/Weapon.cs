@@ -18,11 +18,6 @@ public enum WeaponType
     shield // Raise shieldLevel
 }
 
-public enum WeaponProperty
-{
-
-}
-
 /// <summary>
 /// The WeaponDefinition class allows you to set the properties
 /// of a specific weapon in the Inspector. The Main class has
@@ -101,7 +96,18 @@ public class Weapon : MonoBehaviour {
         }
         def = Main.GetWeaponDefinition(_type);
         collarRend.material.color = def.color;
+        if (type == WeaponType.blaster)
+        {
+            def.damageOnHit = 1;
+            def.delayBetweenShots = 0.4f;
+        }
+        else if (type == WeaponType.spread)
+        {
+            def.damageOnHit = 3;
+            def.delayBetweenShots = 1f;
+        }
         lastShotTime = 0; // You can fire immediately after _type is set.
+
     }
 
     public void Fire()
