@@ -39,7 +39,21 @@ public class EnemyWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        collar = transform.Find("Collar").gameObject;
+        collarRend = collar.GetComponent<Renderer>();
+        // Dynamically create an anchor for all Projectiles
+        if (PROJECTILE_ANCHOR == null)
+        {
+            GameObject go = new GameObject("_EnemyProjectileAnchor");
+            PROJECTILE_ANCHOR = go.transform;
+        }
+
+        // Find the fireDelegate of the root GameObject
+        GameObject rootGO = transform.root.gameObject;
+        if (rootGO.GetComponent<Enemy>() != null)
+        {
+            rootGO.GetComponent<Enemy>().EnemyfireDelegate += Fire;
+        }
     }
 
     // Update is called once per frame
@@ -132,7 +146,7 @@ public class EnemyWeapon : MonoBehaviour
     public Projectile MakeProjectile()
     {
         GameObject go = Instantiate<GameObject>(def.projectilePrefab);
-        if (transform.parent.gameObject.tag == "Hero")
+        if (transform.gameObject.tag == "Hero")
         {
             go.tag = "ProjectileHero";
             go.layer = LayerMask.NameToLayer("ProjectileHero");

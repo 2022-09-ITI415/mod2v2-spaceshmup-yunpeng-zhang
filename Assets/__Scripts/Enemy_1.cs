@@ -14,9 +14,11 @@ public class Enemy_1 : Enemy {
 
     private float x0; // The initial x value of pos
     private float birthTime;
+    public delegate void EnemyWeaponFireDelegate();
+    public EnemyWeaponFireDelegate EnemyfireDelegate;
 
-	// Use this for initialization
-	void Start()
+    // Use this for initialization
+    void Start()
     {
         // Set x0 to the initial x position of Enemy_1
         x0 = pos.x;

@@ -14,6 +14,8 @@ public class Enemy_2 : Enemy {
     public Vector3 p0;
     public Vector3 p1;
     public float birthTime;
+    public delegate void EnemyWeaponFireDelegate();
+    public EnemyWeaponFireDelegate EnemyfireDelegate;
 
     private void Start()
     {
