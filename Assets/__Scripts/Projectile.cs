@@ -6,6 +6,9 @@ public class Projectile : MonoBehaviour {
 
     private BoundsCheck bndCheck;
     private Renderer rend;
+    public Transform trans;
+    public bool isSnake = false;
+    private Vector3 _startPosition;
 
     [Header("Set Dynamically")]
     public Rigidbody rigid;
@@ -26,12 +29,26 @@ public class Projectile : MonoBehaviour {
         }
     }
 
+    public EnemyWeaponType Etype
+    {
+        get
+        {
+            return (_type2);
+        }
+        set
+        {
+            SetEType(value);
+        }
+    }
+
 
     private void Awake()
     {
         bndCheck = GetComponent<BoundsCheck>();
         rend = GetComponent<Renderer>();
         rigid = GetComponent<Rigidbody>();
+        trans = GetComponent<Transform>();
+        
     }
 
     private void Update()
@@ -39,6 +56,12 @@ public class Projectile : MonoBehaviour {
         if (bndCheck.offUp)
         {
             Destroy(gameObject);
+        }
+
+        if(isSnake == true)
+        {
+            _startPosition = transform.position;
+            transform.position = _startPosition + new Vector3(Mathf.Sin(Time.time), 0.0f, 0.0f);
         }
     }
 
@@ -52,6 +75,14 @@ public class Projectile : MonoBehaviour {
         // Set the _type
         _type = eType;
         WeaponDefinition def = Main.GetWeaponDefinition(_type);
+        rend.material.color = def.projectileColor;
+    }
+
+    public void SetEType(EnemyWeaponType eEType)
+    {
+        // Set the _type
+        _type2 = eEType;
+        EnemyWeaponDefinition def = Main.GetEnemyWeaponDefinition(_type2);
         rend.material.color = def.projectileColor;
     }
 }

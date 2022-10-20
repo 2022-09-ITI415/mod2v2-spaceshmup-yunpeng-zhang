@@ -46,6 +46,7 @@ public class Weapon : MonoBehaviour {
     public GameObject collar;
     public float lastShotTime; // Time last shot was fired
     private Renderer collarRend;
+    float sin = Mathf.Sin(Mathf.PI);
 
     private void Start()
     {
@@ -123,7 +124,7 @@ public class Weapon : MonoBehaviour {
                 p.rigid.velocity = vel;
                 break;
 
-            case WeaponType.spread:
+            case WeaponType.spread: // 5点分散子弹
                 p = MakeProjectile(); // Make middle Projectile
                 p.rigid.velocity = vel;
                 p = MakeProjectile(); // Make right Projectile
@@ -139,9 +140,10 @@ public class Weapon : MonoBehaviour {
                 p.transform.rotation = Quaternion.AngleAxis(-20, Vector3.back);
                 p.rigid.velocity = p.transform.rotation * vel;
                 break;
-            case WeaponType.phaser: //新武器 Phaser：攻击时
+            case WeaponType.phaser: //新武器 Phaser：子弹蛇皮走位 这真的能打得到人吗？
                 p = MakeProjectile();
                 p.rigid.velocity = vel;
+                p.isSnake = true;
                 break;
         }
     }

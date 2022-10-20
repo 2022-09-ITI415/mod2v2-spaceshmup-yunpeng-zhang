@@ -16,6 +16,7 @@ public enum EnemyWeaponType
 public class EnemyWeaponDefinition
 {
     public EnemyWeaponType type = EnemyWeaponType.none;
+    public string letter; // Letter to show on the power-up
     public GameObject projectilePrefab; // Prefab for projectiles
     public Color projectileColor = Color.white;
     //public float damageOnHit = 0; // Amount of damage caused
@@ -31,7 +32,7 @@ public class EnemyWeapon : MonoBehaviour
 
     [Header("Set Dynamically")]
     [SerializeField]
-    private EnemyWeaponType _type = EnemyWeaponType.none;
+    private EnemyWeaponType _type = EnemyWeaponType.pewpewpew;
     public EnemyWeaponDefinition def;
     public GameObject collar;
     public float lastShotTime; // Time last shot was fired
@@ -41,6 +42,8 @@ public class EnemyWeapon : MonoBehaviour
     {
         collar = transform.Find("Collar").gameObject;
         collarRend = collar.GetComponent<Renderer>();
+
+        SetType(_type);
         // Dynamically create an anchor for all Projectiles
         if (PROJECTILE_ANCHOR == null)
         {
@@ -121,24 +124,18 @@ public class EnemyWeapon : MonoBehaviour
         {
             case EnemyWeaponType.pewpewpew:
                 p = MakeProjectile();
-                p.rigid.velocity = vel;
+                p.rigid.velocity = -vel;
                 break;
 
             case EnemyWeaponType.spread:
                 p = MakeProjectile(); // Make middle Projectile
-                p.rigid.velocity = vel;
+                p.rigid.velocity = -vel;
                 p = MakeProjectile(); // Make right Projectile
                 p.transform.rotation = Quaternion.AngleAxis(10, Vector3.back);
-                p.rigid.velocity = p.transform.rotation * vel;
-                p = MakeProjectile(); // Make right 2 Projectile
-                p.transform.rotation = Quaternion.AngleAxis(20, Vector3.back);
-                p.rigid.velocity = p.transform.rotation * vel;
+                p.rigid.velocity = p.transform.rotation * -vel;
                 p = MakeProjectile(); // Make left Projectile
                 p.transform.rotation = Quaternion.AngleAxis(-10, Vector3.back);
-                p.rigid.velocity = p.transform.rotation * vel;
-                p = MakeProjectile(); // Make left 2 Projectile
-                p.transform.rotation = Quaternion.AngleAxis(-20, Vector3.back);
-                p.rigid.velocity = p.transform.rotation * vel;
+                p.rigid.velocity = p.transform.rotation * -vel;
                 break;
         }
     }
@@ -159,6 +156,7 @@ public class EnemyWeapon : MonoBehaviour
         go.transform.position = this.transform.position;
         go.transform.SetParent(PROJECTILE_ANCHOR, true);
         Projectile p = go.GetComponent<Projectile>();
+        //p.Etype = type;
         lastShotTime = Time.time;
         return p;
     }

@@ -11,11 +11,11 @@ public class Enemy_1 : Enemy {
     // sine wave width in meters
     public float waveWidth = 4;
     public float waveRotY = 45;
+    public new delegate void EnemyWeaponFireDelegate();
+    public new EnemyWeaponFireDelegate EnemyfireDelegate;
 
     private float x0; // The initial x value of pos
     private float birthTime;
-    public delegate void EnemyWeaponFireDelegate();
-    public EnemyWeaponFireDelegate EnemyfireDelegate;
 
     // Use this for initialization
     void Start()

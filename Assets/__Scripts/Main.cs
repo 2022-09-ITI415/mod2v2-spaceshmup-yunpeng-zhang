@@ -20,6 +20,10 @@ public class Main : MonoBehaviour {
     {
         WeaponType.blaster, WeaponType.blaster, WeaponType.spread, WeaponType.shield
     };
+    public EnemyWeaponType[] EnemypowerUpFrequency = new EnemyWeaponType[]
+    {
+        EnemyWeaponType.pewpewpew,  EnemyWeaponType.spread
+    };
 
     private BoundsCheck bndCheck;
 
