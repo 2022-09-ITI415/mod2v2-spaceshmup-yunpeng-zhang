@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour {
     public Transform trans;
     public bool isSnake = false;
     private Vector3 _startPosition;
+    private float birthTime;
 
     [Header("Set Dynamically")]
     public Rigidbody rigid;
@@ -48,7 +49,8 @@ public class Projectile : MonoBehaviour {
         rend = GetComponent<Renderer>();
         rigid = GetComponent<Rigidbody>();
         trans = GetComponent<Transform>();
-        
+        birthTime = Time.time;
+
     }
 
     private void Update()
@@ -60,8 +62,10 @@ public class Projectile : MonoBehaviour {
 
         if(isSnake == true)
         {
+            float age = Time.time - birthTime;
+            float theta = Mathf.PI * 2 * age / 8;
             _startPosition = transform.position;
-            transform.position = _startPosition + new Vector3(Mathf.Sin(Time.time), 0.0f, 0.0f);
+            transform.position = _startPosition + new Vector3(Mathf.Sin(Time.time)/8, 0.0f, 0.0f);
         }
     }
 
