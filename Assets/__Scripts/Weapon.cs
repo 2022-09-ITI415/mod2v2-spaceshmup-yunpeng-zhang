@@ -35,6 +35,8 @@ public class WeaponDefinition
     public float continuousDamage = 0; // Damage per second (Laser)
     public float delayBetweenShots = 0;
     public float velocity = 20; // Speed of projectiles
+    [@TextAreaAttribute(3,20)]
+    public string des = "Comments on this Weapon";
 }
 public class Weapon : MonoBehaviour {
     static public Transform PROJECTILE_ANCHOR;

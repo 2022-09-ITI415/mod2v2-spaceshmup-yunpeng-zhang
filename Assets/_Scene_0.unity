@@ -379,6 +379,7 @@ MonoBehaviour:
     continuousDamage: 0
     delayBetweenShots: 0.2
     velocity: 50
+    des: normal & speedy weapon
   - type: 2
     letter: S
     color: {r: 0, g: 0.65676546, b: 1, a: 1}
@@ -389,6 +390,7 @@ MonoBehaviour:
     continuousDamage: 0
     delayBetweenShots: 0.8
     velocity: 50
+    des: 5 spreads. high power
   - type: 6
     letter: O
     color: {r: 0, g: 1, b: 0.024693727, a: 1}
@@ -398,18 +400,43 @@ MonoBehaviour:
     continuousDamage: 0
     delayBetweenShots: 0
     velocity: 0
+    des: Please leave comments here
+  - type: 3
+    letter: P
+    color: {r: 0, g: 1, b: 0.93880534, a: 1}
+    projectilePrefab: {fileID: 1899541879965282, guid: 59a4640edad59f94a87c1d235355cb6a,
+      type: 3}
+    projectileColor: {r: 0, g: 1, b: 0.93085146, a: 1}
+    damageOnHit: 3
+    continuousDamage: 0
+    delayBetweenShots: 0.4
+    velocity: 50
+    des: sine wave, mid power and mid firerate
   enemyweaponDefinitions:
   - type: 1
-    projectilePrefab: {fileID: 0}
-    projectileColor: {r: 1, g: 1, b: 1, a: 0}
+    letter: P
+    projectilePrefab: {fileID: 1899541879965282, guid: a93a4c025a0a9144e8c3ba1d092c9b39,
+      type: 3}
+    projectileColor: {r: 0.6132076, g: 0, b: 0, a: 0}
     continuousDamage: 0
     addStatus: 
-    delayBetweenShots: 0.5
+    delayBetweenShots: 1
+    velocity: 40
+    "\u5976\u5976\u4E3A\u4F60\u9644\u9B54\u5965\u5229\u7ED9\u5927\u83E0\u841D": 
+  - type: 3
+    letter: S
+    projectilePrefab: {fileID: 1899541879965282, guid: a93a4c025a0a9144e8c3ba1d092c9b39,
+      type: 3}
+    projectileColor: {r: 1, g: 0.6151437, b: 0, a: 0}
+    continuousDamage: 0
+    addStatus: 
+    delayBetweenShots: 3
     velocity: 40
     "\u5976\u5976\u4E3A\u4F60\u9644\u9B54\u5965\u5229\u7ED9\u5927\u83E0\u841D": 
   prefabPowerUp: {fileID: 1062273549804748, guid: 9649a9a79085a854d9990613a980f435,
     type: 3}
   powerUpFrequency: 01000000010000000200000006000000
+  EnemypowerUpFrequency: 0100000003000000
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
