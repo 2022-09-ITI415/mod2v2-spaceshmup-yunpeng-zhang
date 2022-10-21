@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour {
 
     [Header("Set in Inspector: Enemy")]
     public float speed = 10f; // The speed in m/s
+    public bool canShoot = false; // Enemy can shoot
     public float fireRate = 0.3f; // Seconds/shot (Unused)
     public float health = 10;
     public int score = 100; // Points earned for destroying this
@@ -18,6 +19,8 @@ public class Enemy : MonoBehaviour {
     public bool showingDamage = false;
     public float damageDoneTime; // Time to stop showing damage
     public bool notifiedOfDestruction = false; // Will be used later
+    public delegate void EnemyWeaponFireDelegate();
+    public EnemyWeaponFireDelegate EnemyfireDelegate;
 
     protected BoundsCheck bndCheck;
 
@@ -31,6 +34,7 @@ public class Enemy : MonoBehaviour {
         {
             originalColors[i] = materials[i].color;
         }
+        
     }
 
     // This is a property: A method that acts like a field
@@ -49,8 +53,18 @@ public class Enemy : MonoBehaviour {
     void Update()
     {
         Move();
+        if (canShoot == true && EnemyfireDelegate != null)
+        {
+            try
+            {
+                EnemyfireDelegate();
+            }
+            finally
+            {
 
-        if(showingDamage && Time.time > damageDoneTime)
+            }
+        }
+        if (showingDamage && Time.time > damageDoneTime)
         {
             UnShowDamage();
         }
@@ -125,4 +139,5 @@ public class Enemy : MonoBehaviour {
         }
         showingDamage = false;
     }
+
 }

@@ -11,7 +11,8 @@ public class Enemy_3 : Enemy { // Enemy_3 extends Enemy
     [Header("Set Dynamically: Enemy_3")]
     public Vector3[] points;
     public float birthTime;
-
+    public new delegate void EnemyWeaponFireDelegate();
+    public new EnemyWeaponFireDelegate EnemyfireDelegate;
     private void Start()
     {
         points = new Vector3[3]; // Initialize points

@@ -39,7 +39,7 @@ public class Hero : MonoBehaviour {
         }
         //fireDelegate += TempFire;
 
-        // Reset the weapons to start _Hero with 1 blaster
+        // Reset the weapons to start _Hero with 1 blaster 记得改！！！！！！！！！！！！！！！！！！！！！
         ClearWeapons();
         weapons[0].SetType(WeaponType.blaster);
     }
@@ -82,7 +82,7 @@ public class Hero : MonoBehaviour {
         }
         lastTriggerGo = go;
 
-        if(go.tag == "Enemy")
+        if(go.tag == "Enemy" || go.tag == "ProjectileEnemy" || other.tag == "ProjectileEnemy")
         {
             shieldLevel--;
             Destroy(go);

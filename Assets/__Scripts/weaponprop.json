@@ -1,0 +1,23 @@
+{
+	"weapons":
+	[
+		{
+			"weapon": "blaster",
+			"firerate": "",
+			"firespeed": "",
+			"isOverloaded": "false"
+		},
+		{
+			"weapon": "spread",
+			"firerate": "",
+			"firespeed": "",
+			"isOverloaded": "false"
+		},
+		{
+			"weapon": "",
+			"firerate": "",
+			"firespeed": "",
+			"isOverloaded": "false"
+		}
+	]
+}

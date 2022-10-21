@@ -8,6 +8,8 @@ public class Enemy_2 : Enemy {
     // Determines how much the sine wave will affect movement
     public float sinEccentricity = 0.6f;
     public float lifeTime = 10;
+    public new delegate void EnemyWeaponFireDelegate();
+    public new EnemyWeaponFireDelegate EnemyfireDelegate;
 
     [Header("Set Dynamically: Enemy_2")]
     // Enemy_2 uses a Sin wave to modify a 2-point linear interpolation
