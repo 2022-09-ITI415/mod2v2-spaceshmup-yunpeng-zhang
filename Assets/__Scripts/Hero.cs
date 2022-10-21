@@ -82,7 +82,7 @@ public class Hero : MonoBehaviour {
         }
         lastTriggerGo = go;
 
-        if(go.tag == "Enemy" || go.tag == "ProjectileEnemy")
+        if(go.tag == "Enemy" || go.tag == "ProjectileEnemy" || other.tag == "ProjectileEnemy")
         {
             shieldLevel--;
             Destroy(go);

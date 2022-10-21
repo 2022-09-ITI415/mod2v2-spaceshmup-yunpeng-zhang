@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour {
         {
             originalColors[i] = materials[i].color;
         }
+        
     }
 
     // This is a property: A method that acts like a field
@@ -52,9 +53,16 @@ public class Enemy : MonoBehaviour {
     void Update()
     {
         Move();
-        if(canShoot == true)
+        if (canShoot == true)
         {
-            EnemyfireDelegate();
+            try
+            {
+                EnemyfireDelegate();
+            }
+            finally
+            {
+
+            }
         }
         if (showingDamage && Time.time > damageDoneTime)
         {

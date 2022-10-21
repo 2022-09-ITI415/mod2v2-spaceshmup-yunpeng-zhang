@@ -409,29 +409,29 @@ MonoBehaviour:
     projectileColor: {r: 0, g: 1, b: 0.93085146, a: 1}
     damageOnHit: 3
     continuousDamage: 0
-    delayBetweenShots: 0.4
+    delayBetweenShots: 0.2
     velocity: 50
     des: sine wave, mid power and mid firerate
   enemyweaponDefinitions:
   - type: 1
-    letter: P
+    color: {r: 1, g: 0, b: 0, a: 1}
     projectilePrefab: {fileID: 1899541879965282, guid: a93a4c025a0a9144e8c3ba1d092c9b39,
       type: 3}
     projectileColor: {r: 0.6132076, g: 0, b: 0, a: 0}
     continuousDamage: 0
     addStatus: 
-    delayBetweenShots: 1
-    velocity: 40
+    delayBetweenShots: 2.5
+    velocity: 20
     "\u5976\u5976\u4E3A\u4F60\u9644\u9B54\u5965\u5229\u7ED9\u5927\u83E0\u841D": 
   - type: 3
-    letter: S
+    color: {r: 1, g: 0, b: 0, a: 1}
     projectilePrefab: {fileID: 1899541879965282, guid: a93a4c025a0a9144e8c3ba1d092c9b39,
       type: 3}
     projectileColor: {r: 1, g: 0.6151437, b: 0, a: 0}
     continuousDamage: 0
     addStatus: 
     delayBetweenShots: 3
-    velocity: 40
+    velocity: 20
     "\u5976\u5976\u4E3A\u4F60\u9644\u9B54\u5965\u5229\u7ED9\u5927\u83E0\u841D": 
   prefabPowerUp: {fileID: 1062273549804748, guid: 9649a9a79085a854d9990613a980f435,
     type: 3}

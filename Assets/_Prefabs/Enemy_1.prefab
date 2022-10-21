@@ -272,8 +272,6 @@ MonoBehaviour:
   showingDamage: 0
   damageDoneTime: 0
   notifiedOfDestruction: 0
-  weapons:
-  - {fileID: 0}
   waveFrequency: 2
   waveWidth: 4
   waveRotY: 45
@@ -313,6 +311,7 @@ MonoBehaviour:
   _type: 1
   def:
     type: 1
+    letter: 
     projectilePrefab: {fileID: 1899541879965282, guid: a93a4c025a0a9144e8c3ba1d092c9b39,
       type: 3}
     projectileColor: {r: 0.5754717, g: 0, b: 0, a: 1}
@@ -349,7 +348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980776113189262910}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -1.58, z: 0}
+  m_LocalPosition: {x: 0.05, y: -1.55, z: 0}
   m_LocalScale: {x: 0.19031, y: 0.1241, z: 0.19999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
