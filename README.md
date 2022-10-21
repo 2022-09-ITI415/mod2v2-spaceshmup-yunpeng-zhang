@@ -2,7 +2,7 @@
  
 Weapon properties remake & New Weapon added:
 
-Weapon	Shots	Dmg/Shot	Firerate	Speed
+Weapon	Shots	Dmg/Shot	Firerate	Speed <br />
 Blaster	1	1	0.2	50 <br />
 Spread	5	3	1	40 <br />
 Phaser	1	2	0.2	50 <br />
