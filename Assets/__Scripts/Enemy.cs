@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour {
     void Update()
     {
         Move();
-        if (canShoot == true)
+        if (canShoot == true && EnemyfireDelegate != null)
         {
             try
             {

@@ -63,9 +63,9 @@ public class Projectile : MonoBehaviour {
         if(isSnake == true)
         {
             float age = Time.time - birthTime;
-            float theta = Mathf.PI * 2 * age / 8;
+            float theta = Mathf.PI * 2 * age / 10;
             _startPosition = transform.position;
-            transform.position = _startPosition + new Vector3(Mathf.Sin(Time.time)/8, 0.0f, 0.0f);
+            transform.position = _startPosition + new Vector3(Mathf.Sin(Time.time)/10, 0.0f, 0.0f);
         }
     }
 

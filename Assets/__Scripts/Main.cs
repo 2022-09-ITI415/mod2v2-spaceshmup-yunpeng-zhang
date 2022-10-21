@@ -18,7 +18,7 @@ public class Main : MonoBehaviour {
     public GameObject prefabPowerUp;
     public WeaponType[] powerUpFrequency = new WeaponType[]
     {
-        WeaponType.blaster, WeaponType.blaster, WeaponType.spread, WeaponType.shield
+        WeaponType.blaster, WeaponType.blaster, WeaponType.spread, WeaponType.shield, WeaponType.phaser,WeaponType.phaser
     };
     public EnemyWeaponType[] EnemypowerUpFrequency = new EnemyWeaponType[]
     {

@@ -388,8 +388,8 @@ MonoBehaviour:
     projectileColor: {r: 0, g: 0.654902, b: 1, a: 1}
     damageOnHit: 3
     continuousDamage: 0
-    delayBetweenShots: 0.8
-    velocity: 50
+    delayBetweenShots: 1
+    velocity: 40
     des: 5 spreads. high power
   - type: 6
     letter: O
@@ -407,11 +407,11 @@ MonoBehaviour:
     projectilePrefab: {fileID: 1899541879965282, guid: 59a4640edad59f94a87c1d235355cb6a,
       type: 3}
     projectileColor: {r: 0, g: 1, b: 0.93085146, a: 1}
-    damageOnHit: 3
+    damageOnHit: 2
     continuousDamage: 0
     delayBetweenShots: 0.2
     velocity: 50
-    des: sine wave, mid power and mid firerate
+    des: sine wave, mid power and high firerate
   enemyweaponDefinitions:
   - type: 1
     color: {r: 1, g: 0, b: 0, a: 1}
@@ -435,7 +435,7 @@ MonoBehaviour:
     "\u5976\u5976\u4E3A\u4F60\u9644\u9B54\u5965\u5229\u7ED9\u5927\u83E0\u841D": 
   prefabPowerUp: {fileID: 1062273549804748, guid: 9649a9a79085a854d9990613a980f435,
     type: 3}
-  powerUpFrequency: 01000000010000000200000006000000
+  powerUpFrequency: 010000000100000002000000060000000300000003000000
   EnemypowerUpFrequency: 0100000003000000
 --- !u!20 &282840813
 Camera:
