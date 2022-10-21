@@ -3,9 +3,9 @@
 Weapon properties remake & New Weapon added:
 
 Weapon	Shots	Dmg/Shot	Firerate	Speed
-Blaster	1	1	0.2	50
-Spread	5	3	1	40
-Phaser	1	2	0.2	50
+Blaster	1	1	0.2	50 <br />
+Spread	5	3	1	40 <br />
+Phaser	1	2	0.2	50 <br />
 Blaster is the common weapon in my game, quick firerate and speed with multiple weapons fire at the same time can deal huge damage in a line.
 
 Spread shot speed is the longest but has huge damage per shot. Because I tested it a few times and found that it was too amazing when the spread had 5 weapons fired at the same time, so I greatly increased its time between per shot.
